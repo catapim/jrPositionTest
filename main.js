@@ -7,7 +7,12 @@ const port = 3000
 // })
 
 app.get('/pkmns.json', (req, res) => {
-    var data = [{"nombre":"catalina"},{"nombre": "crstn"}];
+    var data = [
+        {"name":"pikachu","type":"electric","number":25,"img": "http://www.serebii.net/pokemongo/pokemon/025.png"},
+        {"name":"Bulbasaur","type":"grass","number":01,"img": "http://www.serebii.net/pokemongo/pokemon/001.png"},
+        {"name":"caterpie","type":"bug","number":11,"img": "http://www.serebii.net/pokemongo/pokemon/010.png"}
+
+    ];
     res.json(data)
 })
 

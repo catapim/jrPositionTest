@@ -31,7 +31,13 @@ export default class App extends React.Component {
 for (let i = 0;i<this.state.pokemonArray.length; i++) {
   console.log(this.state.pokemonArray[i])
   //array de componentes
-  pokemon_items.push(<Pokemon nombre={this.state.pokemonArray[i].nombre}>  </Pokemon>)
+  pokemon_items.push(<Pokemon 
+    name={this.state.pokemonArray[i].name} 
+    type={this.state.pokemonArray[i].type}
+    number={this.state.pokemonArray[i].number}
+    img={this.state.pokemonArray[i].img}></Pokemon>)
+  // pokemon_items.push(<Pokemon type={this.state.pokemonArray[i].type}></Pokemon>)
+  
 }
 
       return (
