@@ -3,19 +3,19 @@
 */
 import React from 'react';
 import Pokemon from './Pokemon.jsx';
+import CreatePokemon from './CreatePokemon.jsx';
 
 const API = ('./pkmns.json');
 const DEFAULT_QUERY = ('read');
 
 export default class App extends React.Component {
   constructor(props) {
+    
       super(props);
       this.state = {
-        pokemonArray: []
-  };
-      
+        pokemonArray: []        
+  };      
 }
-
   componentDidMount(){
     console.log('hola welcome')
       fetch(API)
@@ -36,7 +36,6 @@ for (let i = 0;i<this.state.pokemonArray.length; i++) {
     type={this.state.pokemonArray[i].type}
     number={this.state.pokemonArray[i].number}
     img={this.state.pokemonArray[i].img}></Pokemon>)
-  // pokemon_items.push(<Pokemon type={this.state.pokemonArray[i].type}></Pokemon>)
   
 }
 
@@ -47,6 +46,8 @@ for (let i = 0;i<this.state.pokemonArray.length; i++) {
           <h1>Pokemones Indigo League</h1>
           
           {pokemon_items}
+
+          <CreatePokemon></CreatePokemon>
           
 
         </div>);
