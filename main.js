@@ -7,6 +7,9 @@ const path = './newpokemons.json';
 // app.get('/hello', (req, res) => {
 //     res.send('Hello World!')
 // })
+var data = [];
+
+
 function writeDataToFile(){
     let newpokemons = [];
           let dataString = JSON.stringify(data);
@@ -16,7 +19,6 @@ function writeDataToFile(){
             console.log("Successfully Written to File.");
           });
 }
-var data = [];
 
 console.log('aqui se crea pokemon');
     // res.json({success:true});
@@ -50,7 +52,8 @@ app.get('/pkmns.json', (req, res) => {
 })
 
 app.put('/pkmn_put', (req, res)=> {
-    data.push(writeDataToFile());       
+    data.push({"name": "pikachu"});       
+    writeDataToFile()
     console.log(data);
 });
 
