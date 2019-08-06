@@ -4,8 +4,6 @@ const port = 3000
 const fs = require('fs');
 const path = './newpokemons.json';
 
-
-
 // app.get('/hello', (req, res) => {
 //     res.send('Hello World!')
 // })
@@ -26,6 +24,13 @@ app.put('/pkmn_put', (req, res)=> {
     fs.access(path, fs.F_OK, (err) => {
         if (err) {
           console.log('archivo no existe');
+          let newpokemons = [];
+          fs.writeFile(path, data, (err) => {
+            if (err) console.log(err);
+            //se hace un string del json
+            let data = JSON.stringify(data);
+            console.log("Successfully Written to File.");
+          });
         } else {
             console.log('archivo si existe');
         }
