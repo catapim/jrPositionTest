@@ -1,6 +1,12 @@
 import React from 'react';
 
 export default class Pokemon extends React.Component {
+
+  alerta(){
+    console.log('alertas');
+  }
+
+  
   render() {
     return (
      <div style={{textAlign: 'center'}}>
@@ -12,7 +18,7 @@ export default class Pokemon extends React.Component {
         <input type="text" name="pnumber" placeholder="numero pkmn"></input>
       </form>
 
-      <button onClick={this.props.createP} >crea pokemon</button>
+      <button onClick={this.alerta}>crea pokemon</button>
 
 
       </div>);
