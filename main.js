@@ -1,26 +1,22 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const request = require('request');
 
 // app.get('/hello', (req, res) => {
 //     res.send('Hello World!')
 // })
 
-const options = {  
-    url: './pokemon.json',
-    method: 'GET'
-};
 
 
-app.get("/api", function(req, res)  { 
-    request(options, function(err, response, body) {  
-      var json = JSON.parse(body);
-      console.log(json); // Logging the output within the request function
-      res.json(json) //then returning the response.. The request.json is empty over here
-    }); //closing the request function      
-  });
+var data = [
+    {"name":"pikachu","type":"electric","number":25,"img": "http://www.serebii.net/pokemongo/pokemon/025.png"},
+    {"name":"Bulbasaur","type":"grass","number":01,"img": "http://www.serebii.net/pokemongo/pokemon/001.png"},
+    {"name":"caterpie","type":"bug","number":11,"img": "http://www.serebii.net/pokemongo/pokemon/010.png"}
+];
 
+app.get('/pkmns.json', (req, res) => {
+      res.json(data)
+})
 
 app.put('pkmn_put', (req, res)=> {
     console.log('aqui se crea pokemon');

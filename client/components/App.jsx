@@ -5,17 +5,17 @@ import React from 'react';
 import Pokemon from './Pokemon.jsx';
 import CreatePokemon from './CreatePokemon.jsx';
 
-const API = ('pokemon.json');
+const API = ('./pkmns.json');
 const DEFAULT_QUERY = ('read');
 
 export default class App extends React.Component {
-  constructor(props) {    
+  constructor(props) {
+    
       super(props);
       this.state = {
         pokemonArray: []        
   };      
 }
-
   componentDidMount(){
     console.log('hola welcome')
       fetch(API)
