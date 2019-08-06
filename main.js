@@ -34,7 +34,7 @@ app.put('/pkmn_put', (req, res)=> {
         } else {
             console.log('archivo si existe');
             fs.readFile(path, (err,buf) => {
-                console.log(buf);
+                console.log(buf.toString());
               });
         }
         // file exists
