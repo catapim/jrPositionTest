@@ -6,8 +6,6 @@ const port = 3000
 //     res.send('Hello World!')
 // })
 
-
-
 var data = [
     {"name":"pikachu","type":"electric","number":25,"img": "http://www.serebii.net/pokemongo/pokemon/025.png"},
     {"name":"Bulbasaur","type":"grass","number":01,"img": "http://www.serebii.net/pokemongo/pokemon/001.png"},
@@ -18,9 +16,9 @@ app.get('/pkmns.json', (req, res) => {
       res.json(data)
 })
 
-app.put('pkmn_put', (req, res)=> {
+app.put('/pkmn_put', (req, res)=> {
     console.log('aqui se crea pokemon');
-    res.send()
+    res.json({success:true});
 })
 
 

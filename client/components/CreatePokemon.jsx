@@ -2,11 +2,20 @@ import React from 'react';
 
 export default class Pokemon extends React.Component {
 
-  alerta(){
-    console.log('alertas');
+  createPokemon(){
+    console.log('create pokemon');
+    $.ajax({
+      url: '/pkmn_put',
+      type: 'PUT',
+      contentType: 'application/json',
+      data: "name=John&location=Boston",
+      success: function(data){
+          console.log('se creo el pokemon');
+      }
+  });
   }
 
-  
+
   render() {
     return (
      <div style={{textAlign: 'center'}}>
@@ -18,7 +27,7 @@ export default class Pokemon extends React.Component {
         <input type="text" name="pnumber" placeholder="numero pkmn"></input>
       </form>
 
-      <button onClick={this.alerta}>crea pokemon</button>
+      <button onClick={this.createPokemon}>crea pokemon</button>
 
 
       </div>);
