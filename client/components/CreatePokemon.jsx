@@ -8,7 +8,6 @@ export default class Pokemon extends React.Component {
       url: '/pkmn_put',
       type: 'PUT',
       contentType: 'application/json',
-      data: "name=John&location=Boston",
       success: function(data){
           console.log('se creo el pokemon');
       }

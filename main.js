@@ -52,7 +52,9 @@ app.get('/pkmns.json', (req, res) => {
 })
 
 app.put('/pkmn_put', (req, res)=> {
-    data.push({"name": "pikachu"});       
+    data.push({"name":"pikachu","type":"electric","number":25,"img": "http://www.serebii.net/pokemongo/pokemon/025.png"},
+    {"name":"bulbasaur","type":"grass","number":1,"img": "http://www.serebii.net/pokemongo/pokemon/001.png"},
+    {"name":"caterpie","type":"bug","number":11,"img": "http://www.serebii.net/pokemongo/pokemon/010.png"});       
     writeDataToFile()
     console.log(data);
 });
