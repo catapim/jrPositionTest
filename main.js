@@ -34,10 +34,13 @@ app.put('/pkmn_put', (req, res)=> {
         } else {
             console.log('archivo si existe');
             fs.readFile(path, (err,buf) => {
-                console.log(buf.toString());
+                //variable que guarda contenido de var path
+                let content_from_json = buf.toString();
+                let pokemon_read_data = JSON.parse(content_from_json);
+                console.log(content_from_json);
+                console.log(pokemon_read_data);
               });
         }
-        // file exists
       });
 })
 
