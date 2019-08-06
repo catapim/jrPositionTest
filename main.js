@@ -25,10 +25,10 @@ app.put('/pkmn_put', (req, res)=> {
         if (err) {
           console.log('archivo no existe');
           let newpokemons = [];
+          let data_ = JSON.stringify(data);
           fs.writeFile(path, data, (err) => {
             if (err) console.log(err);
             //se hace un string del json
-            let data = JSON.stringify(data);
             console.log("Successfully Written to File.");
           });
         } else {
