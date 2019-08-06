@@ -30,6 +30,7 @@ console.log('aqui se crea pokemon');
                 data = pokemon_read_data;
                 console.log(content_from_json);
                 console.log(pokemon_read_data);
+                console.log(data);
                 
               });
         }
@@ -45,8 +46,9 @@ app.get('/pkmns.json', (req, res) => {
       res.json(data)
 })
 
-app.put('/pkmn_put', (req, res)=> {    
-})
+app.put('/pkmn_put', (req, res)=> {
+    data.push("name", "pikachu");       
+});
 
 app.use(express.static('dist'))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
