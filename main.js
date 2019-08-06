@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const fs = require('fs');
+const path = './newpokemons.json';
+
+
 
 // app.get('/hello', (req, res) => {
 //     res.send('Hello World!')
@@ -19,6 +23,14 @@ app.get('/pkmns.json', (req, res) => {
 app.put('/pkmn_put', (req, res)=> {
     console.log('aqui se crea pokemon');
     res.json({success:true});
+    fs.access(path, fs.F_OK, (err) => {
+        if (err) {
+          console.log('archivo no existe');
+        } else {
+            console.log('archivo si existe');
+        }
+        // file exists
+      });
 })
 
 

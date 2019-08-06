@@ -15,7 +15,6 @@ export default class Pokemon extends React.Component {
   });
   }
 
-
   render() {
     return (
      <div style={{textAlign: 'center'}}>
@@ -28,8 +27,7 @@ export default class Pokemon extends React.Component {
       </form>
 
       <button onClick={this.createPokemon}>crea pokemon</button>
-
-
+      
       </div>);
   }
 }
